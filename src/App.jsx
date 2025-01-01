@@ -2,10 +2,10 @@ import { Scanner } from "@yudiel/react-qr-scanner";
 import { useState } from "react";
 
 function App() {
-  const [scan, setScan] = useState("");
+  const [scanData, setScan] = useState("");
   function handleScan(data) {
     console.log(data);
-    setScan("this");
+    setScan(data);
   }
   function handleError(error) {
     setScan("error");
@@ -13,13 +13,14 @@ function App() {
   }
   return (
     <div>
-      {scan ? (
-        <p>{scan}</p>
+      {scanData ? (
+        <div>
+          <p>Result: {scanData}</p>
+          <p>after scanData</p>
+        </div>
       ) : (
         <>
           <Scanner onScan={handleScan} onError={handleError} scanDelay={300} />
-
-          <p>new scanner</p>
         </>
       )}
     </div>
