@@ -5,7 +5,7 @@ function App() {
   const [scan, setScan] = useState("");
   function handleScan(data) {
     console.log(data);
-    setScan(data);
+    setScan("this");
   }
   function handleError(error) {
     setScan("error");
