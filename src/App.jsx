@@ -13,11 +13,15 @@ function App() {
   }
   return (
     <div>
-      {scan && <p>{scan}</p>}
+      {scan ? (
+        <p>{scan}</p>
+      ) : (
+        <>
+          <Scanner onScan={handleScan} onError={handleError} scanDelay={300} />
 
-      <Scanner onScan={handleScan} onError={handleError} scanDelay={300} />
-
-      <p>new scanner</p>
+          <p>new scanner</p>
+        </>
+      )}
     </div>
   );
 }
