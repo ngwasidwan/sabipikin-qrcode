@@ -4,10 +4,9 @@ import { useState } from "react";
 
 function App() {
   const [scanData, setScan] = useState("");
-  function handleScan({ data }) {
-    console.log(data);
-    // const jsonObj = Object.fromEntries(data);
-    alert(`data is ${data}`);
+  function handleScan(result) {
+    console.log(result);
+    alert(`data is ${result}`);
   }
   function handleError(error) {
     setScan(error.message);
