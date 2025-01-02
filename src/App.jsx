@@ -1,16 +1,15 @@
 import { Scanner } from "@yudiel/react-qr-scanner";
 import { useState } from "react";
-// import QRCode from "react-qr-code";
 
 function App() {
   const [scanData, setScan] = useState("");
   function handleScan(data) {
-    console.log(data);
+    alert(`data is ${data}`);
     setScan(data);
   }
   function handleError(error) {
     // setScan("error");
-    console.log(error);
+    alert(error.message);
   }
   return (
     <div>
@@ -24,8 +23,6 @@ function App() {
       <>
         <Scanner onScan={handleScan} onError={handleError} scanDelay={300} />
       </>
-      {/* <h1>qr code</h1>
-      <QRCode value="this" /> */}
     </div>
   );
 }
