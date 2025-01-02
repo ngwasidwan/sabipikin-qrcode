@@ -2,7 +2,8 @@ import { Scanner } from "@yudiel/react-qr-scanner";
 
 function App() {
   function handleScan(result) {
-    alert(`data is ${Object.values(result).join(" ")}`);
+    console.log(result);
+    alert(`data is ${result}`);
   }
   function handleError(error) {
     console.log(error.message);
