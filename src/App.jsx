@@ -1,19 +1,19 @@
 import { Scanner } from "@yudiel/react-qr-scanner";
 import { useState } from "react";
+// import QRCode from "react-qr-code";
 
 function App() {
   const [scanData, setScan] = useState("");
-  function handleScan(data) {
+  function handleScan({ data }) {
+    console.log(data);
+    // const jsonObj = Object.fromEntries(data);
     alert(`data is ${data}`);
-    setScan(data);
   }
   function handleError(error) {
-    // setScan("error");
-    alert(error.message);
+    setScan(error.message);
   }
   return (
     <div>
-      Results
       {scanData && (
         <div>
           <p>Result: {scanData}</p>
