@@ -7,10 +7,16 @@ function App() {
   }
   function handleError(error) {
     console.log(error.message);
+    alert(error.message);
   }
   return (
     <div>
-      <Scanner onScan={handleScan} onError={handleError} scanDelay={300} />
+      <Scanner
+        onScan={handleScan}
+        onError={handleError}
+        scanDelay={300}
+        constraints={{ video: { facingMode: "user" } }}
+      />
     </div>
   );
 }
